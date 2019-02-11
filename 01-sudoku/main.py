@@ -98,11 +98,11 @@ def build_column_rule(N):
 def build_row_rule(N):
   rule = BinaryQuadraticPolynomial(N * N * N)
   for k in range(N):
-    for i1 in range(N):
-      for j in range(N):
-        var1 = get_variable_id(N, i1, j, k)
-        for i2 in range(N):
-          var2 = get_variable_id(N, i2, j, k)
+    for i in range(N):
+      for j1 in range(N):
+        var1 = get_variable_id(N, j1, i, k)
+        for j2 in range(N):
+          var2 = get_variable_id(N, j2, i, k)
           rule.add_coef(var1, var2, 1)
         rule.add_coef(var1, var1, -2)  # this is -2 * x_{var1}
       rule.add_constant(1)
