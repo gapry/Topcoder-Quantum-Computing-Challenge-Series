@@ -12,16 +12,19 @@ hint_hardest = [(0, 0, 7), (1, 2, 6), (1, 3, 4), (1, 8, 8), (2, 1, 2), (2, 6,
                 (7, 6, 5), (7, 7, 0), (8, 6, 7)]
 
 class BinaryQuadraticPolynomial:
-  '''Quadratic Polynomial class
-       Arguments:
-           n:                 The number of binary variables that can be handled by this quadratic polynomial. The variables are numbered from 0 to n - 1.
-       Attributes:
-           array:             The numpy array showing this quadratic polynomial. array[i][j] (i &lt;= j) is the coefficient of x_i * x_j. Since all variables are binary, x_i and x_i * x_i are the same variable.
-           constant:          The constant value of this quadratic polynomial.
-    '''
+  '''
+  Quadratic Polynomial class
+  Arguments:
+    n: The number of binary variables that can be handled by this quadratic polynomial. 
+       The variables are numbered from 0 to n - 1.
+  Attributes:
+    array: The numpy array showing this quadratic polynomial. 
+           array[i][j] (i <= j) is the coefficient of x_i * x_j. 
+           Since all variables are binary, x_i and x_i * x_i are the same variable.
+    constant: The constant value of this quadratic polynomial.
+  '''
 
   def __init__(self, n=1024):
-
     self.array = np.zeros((n, n), dtype=int)
     self.constant = 0
     self._size = n
@@ -38,7 +41,6 @@ class BinaryQuadraticPolynomial:
     return {'binary_polynomial': {'terms': ts}}
 
   def add_coef(self, i, j, c):
-
     if i > j:  # make sure it is an upper triangle matrix.
       t = i
       i = j
@@ -48,30 +50,24 @@ class BinaryQuadraticPolynomial:
     self.array[i][j] += c
 
   def add_constant(self, c):
-
     self.constant += c
 
   def add_poly(self, other_quad_poly):
-
     assert self._size == other_quad_poly._size, '[Error] Array sizes are different!'
     self.array += other_quad_poly.array
     self.constant += other_quad_poly.constant
 
   def multiply_constant(self, c):
-
     self.array *= c
     self.constant *= c
 
   def finalize(self):
-
     return copy.deepcopy(self)
 
 def get_variable_id(N, i, j, k):
-
   return (i * N + j) * N + k
 
 def build_cell_rule(N):
-
   rule = BinaryQuadraticPolynomial(N * N * N)
   for i in range(N):
     for j in range(N):
@@ -85,7 +81,6 @@ def build_cell_rule(N):
   return rule.finalize()
 
 def build_row_rule(N):
-
   rule = BinaryQuadraticPolynomial(N * N * N)
   for k in range(N):
     for i in range(N):
@@ -99,7 +94,6 @@ def build_row_rule(N):
   return rule.finalize()
 
 def build_column_rule(N):
-
   rule = BinaryQuadraticPolynomial(N * N * N)
   for k in range(N):
     for j in range(N):
@@ -113,7 +107,6 @@ def build_column_rule(N):
   return rule.finalize()
 
 def build_subgrid_rule(N):
-
   rule = BinaryQuadraticPolynomial(N * N * N)
   sqrtN = int(sqrt(N))
   for grid_i in range(sqrtN):
@@ -132,17 +125,14 @@ def build_subgrid_rule(N):
   return rule.finalize()
 
 def build_hint_rule(N, hint):
-
   rule = BinaryQuadraticPolynomial(N * N * N)
   for (j, i, k) in hint:
     var = get_variable_id(N, i, j, k)
     rule.add_coef(var, var, -1)  # this is -1 * x_{var}
     rule.add_constant(1)
-
   return rule.finalize()
 
 def build_sudoku_rule(N, A):
-
   cell_rule = build_cell_rule(N)
   row_rule = build_row_rule(N)
   column_rule = build_column_rule(N)
@@ -162,7 +152,6 @@ def build_sudoku_rule(N, A):
   return soduku_rule.finalize()
 
 def build_puzzle_rule(N, A, hint):
-
   soduku_rule = build_sudoku_rule(N, A)
   # print(soduku_rule.export_dict())
   puzzle_rule = build_hint_rule(N, hint)
