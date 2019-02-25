@@ -4,7 +4,7 @@ It's my solution of [Topcoder Quantum Computing Challenge Series](https://www.to
 # Development Environment
 * [Arch Linux](https://www.archlinux.org/)
   ```
-  $ sudo pacman -S vim git tig python
+  $ sudo pacman -S vim git tig python colordiff
   $ sudo pip install numpy matplotlib pandas
   ```
 * [Python 3.7](https://docs.python.org/3/whatsnew/3.7.html)
