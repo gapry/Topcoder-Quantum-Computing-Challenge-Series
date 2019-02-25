@@ -10,6 +10,7 @@ It's my solution of [Topcoder Quantum Computing Challenge Series](https://www.to
 * [Python 3.7](https://docs.python.org/3/whatsnew/3.7.html)
   ```
   $ python -V
+  Python 3.7.2
   ```
 
 # Challenges
