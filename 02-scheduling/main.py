@@ -98,7 +98,12 @@ def build_preferred_time_rule(D, A, T, reqs):
 
 def build_sleep_rule(D, A, T):
   rule = BinaryQuadraticPolynomial(get_total_variables(D, A, T))
-  # TODO
+  # TODO and My Solution
+  for d in range(D):
+    for a in range(A):
+      var1 = get_variable_id(D, A, T, d, a, T)
+      var2 = get_variable_id(D, A, T, d + 1, a, 0)
+      rule.add_coef(var1, var1, var2)
   return rule.finalize()
 
 def build_workonce_rule(D, A, T):
