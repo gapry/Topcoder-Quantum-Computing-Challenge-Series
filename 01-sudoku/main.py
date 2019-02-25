@@ -1,7 +1,6 @@
 import numpy as np
 from math import sqrt
 import copy
-
 '''
 hint_hardest = [
   (0, 0, 7),
@@ -37,7 +36,10 @@ class BinaryQuadraticPolynomial:
   def export_dict(self):
     '''Convert this quadratic polynomial to a dictionary. This is will be called in the DA Solver.'''
     cells = np.where(self.array != 0)
-    ts = [{"coefficient": float(self.array[i][j]), "polynomials": [int(i), int(j)]} for i, j in zip(cells[0], cells[1])]
+    ts = [{
+        "coefficient": float(self.array[i][j]),
+        "polynomials": [int(i), int(j)]
+    } for i, j in zip(cells[0], cells[1])]
     if self.constant != 0:
       ts.append({"coefficient": float(self.constant), "polynomials": []})
     return {'binary_polynomial': {'terms': ts}}
@@ -97,6 +99,7 @@ def build_column_rule(N):
 
 def build_row_rule(N):
   rule = BinaryQuadraticPolynomial(N * N * N)
+  # TODO and My Solution
   for k in range(N):
     for i in range(N):
       for j1 in range(N):
@@ -165,8 +168,8 @@ def solveDA(rule):
 
 def main(N, hint, A=1):
   puzzle_rule = build_puzzle_rule(N, A, hint)
-  result = solveDA(puzzle_rule)   # Call DA API and return result.
-  return result                   # Return the result of solveDA function.
+  result = solveDA(puzzle_rule)  # Call DA API and return result.
+  return result  # Return the result of solveDA function.
 
 '''
 if __name__ == "__main__":

@@ -12,7 +12,7 @@ function fmt() {
 
 function init() {
   clear
-  #fmt
+  fmt
 }
 
 function execute() {
