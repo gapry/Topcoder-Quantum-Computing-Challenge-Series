@@ -74,7 +74,15 @@ class BinaryQuadraticPolynomial:
 
 def build_max_cut_rule(n_node, edges):
   rule = BinaryQuadraticPolynomial(n_node)
-  # TODO
+  # TODO and and My Solution
+  x, y, z = 0, 0, 0
+  for k in range(len(edges[:-1])):
+    i = edges[k]
+    j = edges[k + 1]
+    x += (i[0] - j[0])
+    y += (i[1] - j[1])
+    z += (i[2] - j[2])
+  ans = (x**2, y**2, z**2)
   return rule.finalize()
 
 class Solution:
