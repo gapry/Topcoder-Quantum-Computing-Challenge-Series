@@ -3,6 +3,7 @@
 declare -r py=/usr/bin/python3.7
 declare -r src=main.py
 declare -r submit=maxcut.zip
+declare -r input=sample_graph.txt
 
 function fmt() {
   yapf -i --style='{
@@ -18,7 +19,12 @@ function init() {
 }
 
 function execute() {
-  $py $src
+  if ! [ -e $input ]
+  then
+    echo "[ERROR]" $input "doesn't exist"
+  else
+    $py $src
+  fi
 }
 
 function pre_submit() {
