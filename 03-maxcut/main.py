@@ -27,7 +27,7 @@ class BinaryQuadraticPolynomial:
          The variables are numbered from 0 to n - 1.
       Attributes:
         array: The numpy array showing this quadratic polynomial. 
-               array[i][j] (i &lt;= j) is the coefficient of x_i * x_j. 
+               array[i][j] (i <= j) is the coefficient of x_i * x_j. 
                Since all variables are binary, x_i and x_i * x_i are the same variable.
         constant: The constant value of this quadratic polynomial.
   '''
