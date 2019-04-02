@@ -17,3 +17,4 @@ It's my solution of [Topcoder Quantum Computing Challenge Series](https://www.to
 - [Quantum Computing Learning Challenge #1 - Solve Sudoku Instantly](https://www.topcoder.com/challenges/30081256)
 - [Quantum Computing Learning Challenge #2 - Scheduling](https://www.topcoder.com/challenges/30083465)
 - [Quantum Computing Learning Challenge #3 - Max Cut](https://www.topcoder.com/challenges/30084839)
+- [Quantum Computing Challenge Series - Max Cut Marathon Match](https://www.topcoder.com/challenges/30086139)
