@@ -18,6 +18,8 @@
   ```
 
 ## References
+- [A beginner's guide to quantum computing | Shohini Ghose, YouTube (TED)](https://www.youtube.com/watch?v=QuR969uMICM)
+- [Quantum Computers Explained – Limits of Human Technology, YouTube (Kurzgesagt – In a Nutshell)](https://www.youtube.com/watch?v=JhHMJCUmq28)
 - [Quantum Internet is Coming, Quantum Teleportation Sets New Record](https://fossbytes.com/quantum-internet-is-coming-quantum-teleportation-sets-new-record/)
 - [When Open Source meets Quantum Computing, FOSDEM@YouTube](https://www.youtube.com/watch?v=W8iXl6aowm0)
 - [Quantum Open Source Foundation](https://qosf.org/)
@@ -26,3 +28,5 @@
 - [ProjectQ -  Powerful open source software for quantum computing](https://projectq.ch/) / [arXiv](https://arxiv.org/abs/1612.08091)
 - [IBM - Qiskit](https://qiskit.org/)
 - [Microsoft - Get started with quantum development](https://www.microsoft.com/en-us/quantum/development-kit)
+- [Amazon Braket – Get Started with Quantum Computing](https://aws.amazon.com/blogs/aws/amazon-braket-get-started-with-quantum-computing/)
+- [Quantum Bullshit Detector](https://twitter.com/BullshitQuantum)
