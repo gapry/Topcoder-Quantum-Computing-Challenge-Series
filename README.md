@@ -17,6 +17,10 @@
   Python 3.7.2
   ```
 
+## Online Courses
+- [The Introduction to Quantum Computing](https://www.coursera.org/learn/quantum-computing-algorithms)
+- [Quantum 101: Quantum Computing & Quantum Internet](https://www.edx.org/professional-certificate/delftx-quantum-computing-and-quantum-internet)
+
 ## References
 - [A beginner's guide to quantum computing | Shohini Ghose, YouTube (TED)](https://www.youtube.com/watch?v=QuR969uMICM)
 - [Quantum Computers Explained – Limits of Human Technology, YouTube (Kurzgesagt – In a Nutshell)](https://www.youtube.com/watch?v=JhHMJCUmq28)
